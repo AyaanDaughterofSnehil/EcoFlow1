@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "860202289499",
+    "firebase_url": "https://ideathon-bcm-x-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "ideathon-bcm-x",
+    "storage_bucket": "ideathon-bcm-x.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:860202289499:android:d08f9820db2dfb1398727e",
+        "android_client_info": {
+          "package_name": "com.example.ecoflow"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDN5YBIayDTs5a9nqQhKoQgITQpSG052QM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

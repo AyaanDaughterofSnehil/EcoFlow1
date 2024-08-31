@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Base App Theme-->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowContentTransitions">true</item>
+    </style>
+
+    <style name="Button.Primary" parent="ThemeOverlay.AppCompat">
+        <item name="colorAccent">#0ea5e9</item>
+    </style>
+</resources>
