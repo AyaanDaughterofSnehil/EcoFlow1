@@ -22,10 +22,10 @@
         android:id="@+id/logo_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hi There, Welcome Back!"
+        android:text="Hi There,         Welcome Back!"
         android:transitionName="logo_text"
         android:textSize="40sp"
-        android:fontFamily="@font/aldrich"
+        android:fontFamily="@font/suse"
         android:textColor="#000"/>
 
     <TextView
