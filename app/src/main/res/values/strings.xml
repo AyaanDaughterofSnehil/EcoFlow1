@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">EcoFlow</string>
     <string name="already_have_an_account_log_in">Already Have an Account? Log In</string>
+    <string name="code_text">Co\nde</string>
 </resources>

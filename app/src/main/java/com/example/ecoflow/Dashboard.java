@@ -1,9 +1,17 @@
 package com.example.ecoflow;
 
 import android.annotation.SuppressLint;
+import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.WindowManager;
 
 import androidx.annotation.ColorInt;
@@ -15,9 +23,11 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.yarolegovich.slidingrootnav.SlidingRootNav;
-import com.yarlegovich.slidingrootnav.SlidingRootNavBuilder;
+//import com.yarolegovich.slidingrootnav.SlidingRootNav;
+//import com.yarolegovich.slidingrootnav.SlidingRootNavBuilder;
 
+
+import java.util.ArrayList;
 import java.util.Arrays;
 
 
@@ -34,7 +44,7 @@ public class Dashboard extends AppCompatActivity implements DrawerAdapter.OnItem
     private String[] screenTitles;
     private Drawable[] screenIcons;
 
-    private SlidingRootNav slidingRootNav;
+    //private SlidingRootNav slidingRootNav;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -45,7 +55,7 @@ public class Dashboard extends AppCompatActivity implements DrawerAdapter.OnItem
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        slidingRootNav = new SlidingRootNavBuilder(this)
+        /*slidingRootNav = new SlidingRootNavBuilder(this)
                 .withDragDistance(180)
                 .withRootViewScale(0.75f)
                 .withRootViewElevation(25)
@@ -54,7 +64,7 @@ public class Dashboard extends AppCompatActivity implements DrawerAdapter.OnItem
                 .withContentClickableWhenMenuOpened(false)
                 .withSavedState(savedInstanceState)
                 .withMenuLayout(R.layout.drawer_menu)
-                .inject();
+                .inject();*/
 
         screenIcons = loadScreenIcons();
         screenTitles = loadScreenTitles();
@@ -111,11 +121,6 @@ public class Dashboard extends AppCompatActivity implements DrawerAdapter.OnItem
     }
 
     @Override
-    public void onBackPressed() {
-        finish();
-    }
-
-    @Override
     public void onItemSelected(int position) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
@@ -148,7 +153,7 @@ public class Dashboard extends AppCompatActivity implements DrawerAdapter.OnItem
             finish();
         }
 
-        slidingRootNav.closeMenu();
+        //slidingRootNav.closeMenu();
         transaction.addToBackStack(null);
         transaction.commit();
     }

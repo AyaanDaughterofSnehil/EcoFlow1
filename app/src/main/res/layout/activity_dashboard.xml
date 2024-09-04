@@ -13,7 +13,6 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#fff"
         app:titleTextColor="@color/theme"/>
 
     <FrameLayout
@@ -21,20 +20,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"/>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="20dp">
-
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/menu"
-            android:layout_centerVertical="true"
-            android:onClick="Dashboard"/>
-
-    </RelativeLayout>
 
     <ScrollView
         android:layout_width="match_parent"
