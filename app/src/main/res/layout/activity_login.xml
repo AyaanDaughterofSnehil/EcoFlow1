@@ -25,7 +25,7 @@
         android:text="Hi There,         Welcome Back!"
         android:transitionName="logo_text"
         android:textSize="40sp"
-        android:fontFamily="@font/suse"
+        android:fontFamily="@font/suse_head"
         android:textColor="#000"/>
 
     <TextView

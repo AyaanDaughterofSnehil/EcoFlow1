@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="-20dp"
-            android:fontFamily="@font/suse"
+            android:fontFamily="@font/suse_head"
             android:text="Welcome"
             android:textColor="#000"
             android:textSize="40sp"

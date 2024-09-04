@@ -40,7 +40,7 @@
                     android:layout_height="wrap_content"
                     android:text="EcoFlow"
                     android:textSize="32sp"
-                    android:fontFamily="@font/suse"
+                    android:fontFamily="@font/suse_head"
                     android:layout_centerHorizontal="true"/>
 
                 <RelativeLayout
