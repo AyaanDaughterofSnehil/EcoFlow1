@@ -3,7 +3,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="fill_parent"
+    android:background="@color/white"
     android:layout_height="fill_parent">
 
     <LinearLayout
@@ -15,12 +17,14 @@
         tools:context=".SignUp">
 
         <ImageView
+            android:id="@+id/reg_image"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:src="@drawable/logo"
             android:transitionName="logo_image" />
 
         <TextView
+            android:id="@+id/reg_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="-20dp"
@@ -31,6 +35,7 @@
             android:transitionName="logo_text" />
 
         <TextView
+            android:id="@+id/reg_slogan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sign Up to start your new journey"
@@ -136,7 +141,7 @@
                 android:transitionName="button_tran" />
 
             <Button
-                android:id="@+id/reg_login_btn"
+                android:id="@+id/login_screen"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#00000000"
@@ -148,9 +153,6 @@
                 android:transitionName="login_signup_tran"
                 android:text="Already Have an Account? Sign In" />
         </LinearLayout>
-
-
-
 
     </LinearLayout>
 

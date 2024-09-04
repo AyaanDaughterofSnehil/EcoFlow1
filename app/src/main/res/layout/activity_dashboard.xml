@@ -41,6 +41,7 @@
                     android:text="EcoFlow"
                     android:textSize="32sp"
                     android:fontFamily="@font/suse_head"
+                    android:textColor="@color/head_theme"
                     android:layout_centerHorizontal="true"/>
 
                 <RelativeLayout
@@ -62,8 +63,8 @@
                         android:layout_marginLeft="15dp"/>
 
                     <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
                         android:src="@drawable/search"
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"

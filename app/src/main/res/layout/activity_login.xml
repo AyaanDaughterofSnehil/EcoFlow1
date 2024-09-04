@@ -88,16 +88,16 @@
             android:layout_margin="5dp"/>
 
         <Button
-        android:id="@+id/login_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
-        android:background="#0ea5e9"
-        android:backgroundTint="#0ea5e9"
-        android:text="Sign In"
-        android:textColor="#fff"
-        android:transitionName="button_tran"/>
+            android:id="@+id/login_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:onClick="signIn"
+            android:background="@color/theme"
+            android:text="Sign In"
+            android:textColor="#fff"
+            android:transitionName="button_tran"/>
 
         <Button
             android:id="@+id/signup_screen"

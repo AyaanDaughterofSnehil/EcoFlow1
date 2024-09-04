@@ -1,11 +1,18 @@
 package com.example.ecoflow;
 
+import android.app.ActivityOptions;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Pair;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -19,7 +26,9 @@ public class SignUp extends AppCompatActivity {
 
     //Variables
     TextInputLayout regName, regUsername, regEmail, regPhoneNo, regPassword;
-    Button regBtn, regToLogInBtn;
+    Button callLogIn, signup_btn;
+    ImageView regImage;
+    TextView regText, regSlogan;
 
     FirebaseDatabase rootNode;
     DatabaseReference reference;
@@ -27,7 +36,41 @@ public class SignUp extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_sign_up);
+
+        //Hooks
+        callLogIn = findViewById(R.id.login_screen);
+        regImage = findViewById(R.id.reg_image);
+        regText = findViewById(R.id.reg_title);
+        regSlogan = findViewById(R.id.reg_slogan);
+        regName = findViewById(R.id.reg_name);
+        regPhoneNo = findViewById(R.id.reg_phoneNo);
+        regUsername = findViewById(R.id.reg_username);
+        regEmail = findViewById(R.id.reg_email);
+        regPassword = findViewById(R.id.reg_password);
+        signup_btn = findViewById(R.id.reg_btn);
+
+        callLogIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SignUp.this,Login.class);
+
+                Pair[] pairs = new Pair[7];
+
+                pairs[0] = new Pair<View,String>(regImage,"logo_image");
+                pairs[1] = new Pair<View,String>(regText,"logo_text");
+                pairs[2] = new Pair<View,String>(regSlogan,"logo_desc");
+                pairs[3] = new Pair<View,String>(regUsername,"username_tran");
+                pairs[4] = new Pair<View,String>(regPassword,"password_tran");
+                pairs[5] = new Pair<View,String>(signup_btn,"button_tran");
+                pairs[6] = new Pair<View,String>(callLogIn,"login_signup_tran");
+
+                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SignUp.this,pairs);
+                startActivity(intent, options.toBundle());
+
+            }
+        });
     }
 
     private Boolean validateName() {
@@ -45,86 +88,79 @@ public class SignUp extends AppCompatActivity {
     }
 
     private Boolean validateUsername() {
-        String val = regName.getEditText().getText().toString();
+        String val = regUsername.getEditText().getText().toString();
         String noWhiteSpace = "\\A\\w{4,20}\\z";
 
         if (val.isEmpty()) {
-            regName.setError("Field Cannot be Empty");
+            regUsername.setError("Field Cannot be Empty");
             return false;
         }
 
         else if (val.length() >= 15) {
-            regName.setError("Username too long");
+            regUsername.setError("Username too long");
             return false;
         }
 
         else if (!val.matches(noWhiteSpace)) {
-            regName.setError("White spaces aren't allowed");
+            regUsername.setError("White spaces aren't allowed");
             return false;
         }
 
         else {
-            regName.setError(null);
+            regUsername.setError(null);
+            regUsername.setErrorEnabled(false);
             return true;
         }
     }
 
     private Boolean validateEmail() {
-        String val = regName.getEditText().getText().toString();
+        String val = regEmail.getEditText().getText().toString();
         String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
         if (val.isEmpty()) {
-            regName.setError("Field Cannot be Empty");
+            regEmail.setError("Field Cannot be Empty");
             return false;
         } else if (!val.matches(emailPattern)) {
-            regName.setError("Invalid email address");
+            regEmail.setError("Invalid email address");
             return false;
         } else {
-            regName.setError(null);
+            regEmail.setError(null);
+            regEmail.setErrorEnabled(false);
             return true;
         }
     }
 
     private Boolean validatePhoneNo() {
-        String val = regName.getEditText().getText().toString();
+        String val = regPhoneNo.getEditText().getText().toString();
 
         if (val.isEmpty()) {
-            regName.setError("Field Cannot be Empty");
+            regPhoneNo.setError("Field Cannot be Empty");
             return false;
         }
 
         else if (val.length() > 10) {
-            regName.setError("Invalid Phone Number");
+            regPhoneNo.setError("Invalid Phone Number");
             return false;
         }
 
         else {
-            regName.setError(null);
+            regPhoneNo.setError(null);
+            regPhoneNo.setErrorEnabled(false);
             return true;
         }
     }
 
     private Boolean validatePassword() {
         String val = regPassword.getEditText().getText().toString();
-        String passwordVal = "^" +
-                "(?=.*[a-zA-Z])" +
-                "(?=.*[@#$%^&+=])" +
-                "(?=\\s+$)" +
-                ".{4,}" +
-                "$";
 
         if (val.isEmpty()) {
-            regName.setError("Field Cannot be Empty");
-            return false;
-        }
-
-        else if (!val.matches(passwordVal)) {
-            regName.setError("Please choose a strong Password");
+            regPassword.setError("Field Cannot be Empty");
             return false;
         }
 
         else {
-            regName.setError(null);
+            regPassword.setError(null);
+            regPassword.setErrorEnabled(false);
             return true;
         }
     }

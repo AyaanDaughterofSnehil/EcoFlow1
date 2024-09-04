@@ -61,7 +61,54 @@ public class Login extends AppCompatActivity {
             }
         });
 
-
     }
 
+    private Boolean validateUsername() {
+        String val = username.getEditText().getText().toString();
+        String noWhiteSpace = "\\A\\w{4,20}\\z";
+
+        if (val.isEmpty()) {
+            username.setError("Field Cannot be Empty");
+            return false;
+        }
+
+        else if (val.length() >= 15) {
+            username.setError("Username too long");
+            return false;
+        }
+
+        else if (!val.matches(noWhiteSpace)) {
+            username.setError("White spaces aren't allowed");
+            return false;
+        }
+
+        else {
+            username.setError(null);
+            username.setErrorEnabled(false);
+            return true;
+        }
+    }
+
+    private Boolean validatePassword() {
+        String val = password.getEditText().getText().toString();
+
+        if (val.isEmpty()) {
+            password.setError("Field Cannot be Empty");
+            return false;
+        }
+
+        else {
+            password.setError(null);
+            password.setErrorEnabled(false);
+            return true;
+        }
+    }
+
+    public void signIn(View view) {
+
+        if (validateUsername() | validatePassword()) {
+            Intent myIntent = new Intent(Login.this, Dashboard.class);
+            Login.this.startActivity(myIntent);
+        }
+    }
 }
