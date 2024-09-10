@@ -50,12 +50,13 @@
             android:id="@+id/username"
             android:layout_marginBottom="10dp"
             android:hint="Username"
-            android:transitionName="username_tran"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            android:textColorHint="@color/head_theme"
+            style="@style/TextInputStyle">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:textColor="@color/head_theme"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -64,15 +65,18 @@
             android:layout_height="wrap_content"
             android:id="@+id/password"
             android:hint="Password"
+            android:textColorHint="@color/head_theme"
             app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/head_theme"
             android:transitionName="password_tran"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            style="@style/TextInputStyle">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
-                android:transitionName="password_tran"/>
+                android:transitionName="password_tran"
+                android:textColor="@color/head_theme"/>
 
         </com.google.android.material.textfield.TextInputLayout>
         
@@ -87,14 +91,15 @@
             android:elevation="0dp"
             android:layout_margin="5dp"/>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/login_btn"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
             android:onClick="signIn"
-            android:background="@color/theme"
+            android:backgroundTint="@color/theme"
+            app:cornerRadius="10dp"
             android:text="Sign In"
             android:textColor="#fff"
             android:transitionName="button_tran"/>

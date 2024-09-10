@@ -9,4 +9,9 @@
     <style name="Button.Primary" parent="ThemeOverlay.AppCompat">
         <item name="colorAccent">@color/theme</item>
     </style>
+
+    <style name="TextInputStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/head_theme</item>
+        <item name="boxStrokeErrorColor">@color/error</item>
+    </style>
 </resources>
