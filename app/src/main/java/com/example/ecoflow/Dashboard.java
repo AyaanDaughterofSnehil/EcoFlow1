@@ -1,42 +1,61 @@
 package com.example.ecoflow;
 
-import android.annotation.SuppressLint;
-import android.bluetooth.BluetoothAdapter;
-import android.bluetooth.BluetoothDevice;
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
-import android.content.res.TypedArray;
-import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.MenuItem;
 import android.view.WindowManager;
+import android.widget.FrameLayout;
 
-import androidx.annotation.ColorInt;
-import androidx.annotation.ColorRes;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.content.ContextCompat;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-//import com.yarolegovich.slidingrootnav.SlidingRootNav;
-//import com.yarolegovich.slidingrootnav.SlidingRootNavBuilder;
-
-
-import java.util.ArrayList;
-import java.util.Arrays;
-
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Dashboard extends AppCompatActivity  {
 
+    private BottomNavigationView bottomNavigationView;
+    private FrameLayout frameLayout;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_dashboard);
+
+        bottomNavigationView = findViewById(R.id.bottomNavView);
+        frameLayout = findViewById(R.id.frameLayout);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                int itemId = item.getItemId();
+
+                if (itemId == R.id.navHome) {
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.add(R.id.frameLayout, new HomeFragment());
+                    fragmentTransaction.commit();
+                } else if (itemId == R.id.navAbout) {
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.add(R.id.frameLayout, new AboutFragment());
+                    fragmentTransaction.commit();
+                } else if (itemId == R.id.navFeedback) {
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.add(R.id.frameLayout, new FeedbackFragment());
+                    fragmentTransaction.commit();
+                } else if (itemId == R.id.navProfile) {
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.add(R.id.frameLayout, new ProfileFragment());
+                    fragmentTransaction.commit();
+                }
+
+                return false;
+            }
+        });
     }
 }

@@ -14,4 +14,9 @@
         <item name="boxStrokeColor">@color/head_theme</item>
         <item name="boxStrokeErrorColor">@color/error</item>
     </style>
+
+    <style name="ThemeOverlay.AppTheme.TextInputEditText.Outlined" parent="">
+        <item name="colorControlActivated">@color/head_theme</item>
+    </style>
+
 </resources>
