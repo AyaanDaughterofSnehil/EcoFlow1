@@ -38,6 +38,7 @@
             android:id="@+id/reg_slogan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/theme"
             android:text="Sign Up to start your new journey"
             android:textSize="18sp"
             android:transitionName="logo_desc" />
@@ -53,6 +54,7 @@
                 android:id="@+id/reg_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:hintTextColor="@color/head_theme"
                 android:layout_marginBottom="10dp"
                 android:textColorHint="@color/head_theme"
                 style="@style/TextInputStyle"
@@ -61,6 +63,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textCursorDrawable="@null"
                     android:inputType="text"
                     android:textColor="@color/head_theme"/>
 
@@ -72,6 +75,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:hint="Username"
+                app:hintTextColor="@color/head_theme"
                 android:textColorHint="@color/head_theme"
                 style="@style/TextInputStyle"
                 app:counterMaxLength="15">
@@ -79,6 +83,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textCursorDrawable="@null"
                     android:inputType="text"
                     android:textColor="@color/head_theme"/>
 
@@ -89,6 +94,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
+                app:hintTextColor="@color/head_theme"
                 android:textColorHint="@color/head_theme"
                 style="@style/TextInputStyle"
                 android:hint="Email Address">
@@ -96,6 +102,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textCursorDrawable="@null"
                     android:inputType="textEmailAddress"
                     android:textColor="@color/head_theme"/>
 
@@ -108,12 +115,14 @@
                 android:layout_marginBottom="10dp"
                 android:textColorHint="@color/head_theme"
                 style="@style/TextInputStyle"
+                app:hintTextColor="@color/head_theme"
                 android:hint="Phone Number">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="number"
+                    android:textCursorDrawable="@null"
                     android:textColor="@color/head_theme"/>
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -124,6 +133,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:hint="Password"
+                app:hintTextColor="@color/head_theme"
                 android:textColorHint="@color/head_theme"
                 style="@style/TextInputStyle"
                 android:transitionName="button_tran"
@@ -134,6 +144,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"
+                    android:textCursorDrawable="@null"
                     android:textColor="@color/head_theme"/>
 
             </com.google.android.material.textfield.TextInputLayout>
