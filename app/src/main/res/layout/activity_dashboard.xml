@@ -9,6 +9,7 @@
     android:background="#f3f4f6">
 
     <ScrollView
+        android:id="@+id/scroll"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -28,7 +29,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="EcoFlow"
-                    android:textSize="32sp"
+                    android:textSize="42sp"
                     android:letterSpacing="0.1"
                     android:fontFamily="@font/suse_head"
                     android:textColor="@color/head_theme"
@@ -95,6 +96,7 @@
                         android:layout_height="wrap_content"
                         android:breakStrategy="simple"
                         android:maxLines="2"
+                        android:textColor="@color/theme"
                         android:textAlignment="center"
                         android:text="Water Tracking"/>
 
@@ -125,6 +127,7 @@
                         android:layout_height="wrap_content"
                         android:breakStrategy="simple"
                         android:lines="2"
+                        android:textColor="@color/theme"
                         android:textAlignment="center"
                         android:text="Water Recharge"/>
 
@@ -155,6 +158,7 @@
                         android:layout_height="wrap_content"
                         android:breakStrategy="simple"
                         android:maxLines="2"
+                        android:textColor="@color/theme"
                         android:textAlignment="center"
                         android:text="Water Management"/>
 
@@ -185,6 +189,7 @@
                         android:layout_height="wrap_content"
                         android:breakStrategy="simple"
                         android:lines="2"
+                        android:textColor="@color/theme"
                         android:textAlignment="center"
                         android:text="Help      Center"/>
 
@@ -196,27 +201,19 @@
 
     </ScrollView>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical">
-
         <FrameLayout
             android:id="@+id/frameLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
             android:layout_weight="1" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNavView"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
-            app:itemPaddingBottom="10dp"
+            android:layout_height="wrap_content"
+            android:background="#172554"
+            app:itemIconTint="@color/nav_icons"
+            app:itemActiveIndicatorStyle="@style/NavIndicator"
             app:menu="@menu/bottom_nav_menu" />
-
-    </LinearLayout>
-
-
 
 </LinearLayout>

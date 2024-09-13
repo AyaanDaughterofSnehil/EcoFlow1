@@ -19,4 +19,8 @@
         <item name="colorControlActivated">@color/head_theme</item>
     </style>
 
+    <style name="NavIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">#9960a5fa</item>
+    </style>
+
 </resources>
