@@ -167,17 +167,26 @@ public class SignUp extends AppCompatActivity {
 
     public void registerUser(View view) {
 
-        if (!validateName() | !validateUsername() | !validateEmail() | !validatePassword() | !validatePhoneNo()) {
-            return;
-        }
+        if (validateName() | validateUsername() | validateEmail() | validatePassword() | validatePhoneNo()) {
 
-        //Get all the values in String
-        String name = regName.getEditText().getText().toString();
-        String username = regUsername.getEditText().getText().toString();
-        String email = regEmail.getEditText().getText().toString();
-        String phoneNo = regPhoneNo.getEditText().getText().toString();
-        String password = regPassword.getEditText().getText().toString();
-        UserHelperClass helperClass = new UserHelperClass(name, username, email, phoneNo, password);
-        reference.child(username).setValue(helperClass);
+            rootNode = FirebaseDatabase.getInstance();
+            reference = rootNode.getReference("User");
+
+            //Get all the values in String
+            String name = regName.getEditText().getText().toString();
+            String username = regUsername.getEditText().getText().toString();
+            String email = regEmail.getEditText().getText().toString();
+            String phoneNo = regPhoneNo.getEditText().getText().toString();
+            String password = regPassword.getEditText().getText().toString();
+
+            UserHelperClass helperClass = new UserHelperClass(name, username, email, phoneNo, password);
+
+            reference.child(username).setValue(helperClass);
+
+            Intent intent = new Intent(SignUp.this, Login.class);
+            startActivity(intent);
+        }
     }
+
+
 }
