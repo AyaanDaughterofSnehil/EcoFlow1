@@ -8,19 +8,13 @@
     android:orientation="vertical"
     android:background="#f3f4f6">
 
-    <ScrollView
-        android:id="@+id/scroll"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginTop="25dp">
-
-        <LinearLayout
+    <LinearLayout
+            android:id="@+id/scroll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <RelativeLayout
+        <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -65,7 +59,7 @@
 
             </RelativeLayout>
 
-            <LinearLayout
+        <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -84,8 +78,10 @@
                         android:layout_margin="10dp">
 
                         <ImageView
+                            android:id="@+id/track"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
+                            android:onClick="Wtrack"
                             android:src="@drawable/w_tracking"
                             android:layout_centerInParent="true"/>
 
@@ -197,23 +193,51 @@
 
             </LinearLayout>
 
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:background="#99bfdbfe">
+
+        <LinearLayout
+            android:id="@+id/featured_bg"
+            android:layout_width="170dp"
+            android:layout_height="280dp"
+            android:background="@android:color/transparent"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/recycle1"/>
+
         </LinearLayout>
 
-    </ScrollView>
-
-        <FrameLayout
-            android:id="@+id/frameLayout"
+        <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:layout_height="280dp"
+            android:layout_toRightOf="@+id/featured_bg"
+            android:background="#f3f4f6"/>
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottomNavView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#172554"
-            app:itemIconTint="@color/nav_icons"
-            app:itemActiveIndicatorStyle="@style/NavIndicator"
-            app:menu="@menu/bottom_nav_menu" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F2172554"
+        app:itemIconTint="@color/nav_icons"
+        app:itemActiveIndicatorStyle="@style/NavIndicator"
+        app:menu="@menu/bottom_nav_menu" />
 
 </LinearLayout>

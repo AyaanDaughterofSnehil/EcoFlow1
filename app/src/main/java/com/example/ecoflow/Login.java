@@ -106,7 +106,9 @@ public class Login extends AppCompatActivity {
 
     public void signIn(View view) {
 
-        if (validateUsername() | validatePassword()) {
+        if (!validateUsername() | !validatePassword()) {
+            return;
+        } else {
             Intent myIntent = new Intent(Login.this, Dashboard.class);
             Login.this.startActivity(myIntent);
         }

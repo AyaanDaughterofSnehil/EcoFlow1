@@ -167,8 +167,9 @@ public class SignUp extends AppCompatActivity {
 
     public void registerUser(View view) {
 
-        if (validateName() | validateUsername() | validateEmail() | validatePassword() | validatePhoneNo()) {
-
+        if (!validateName() | !validateUsername() | !validateEmail() | !validatePassword() | !validatePhoneNo()) {
+            return;
+        } else {
             rootNode = FirebaseDatabase.getInstance();
             reference = rootNode.getReference("User");
 

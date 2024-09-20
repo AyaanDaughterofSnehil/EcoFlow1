@@ -10,13 +10,13 @@
     android:background="#fff"
     android:padding="20dp">
 
-    
+
     <ImageView
         android:id="@+id/logo_image"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:src="@drawable/logo"
-        android:transitionName="logo_image"/>
+        android:transitionName="logo_image" />
 
     <TextView
         android:id="@+id/logo_name"
@@ -53,7 +53,7 @@
             android:theme="@style/ThemeOverlay.AppTheme.TextInputEditText.Outlined"
             android:hint="Username"
             app:hintTextColor="@color/head_theme"
-            android:textColorHint="@color/head_theme"
+            android:textColorHint="#99000000"
             style="@style/TextInputStyle">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -68,10 +68,10 @@
             android:layout_height="wrap_content"
             android:id="@+id/password"
             android:hint="Password"
-            android:textColorHint="@color/head_theme"
             app:passwordToggleEnabled="true"
             android:theme="@style/ThemeOverlay.AppTheme.TextInputEditText.Outlined"
             app:hintTextColor="@color/head_theme"
+            android:textColorHint="#99000000"
             app:passwordToggleTint="@color/head_theme"
             android:transitionName="password_tran"
             style="@style/TextInputStyle">
@@ -103,7 +103,7 @@
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
             android:onClick="signIn"
-            android:backgroundTint="@color/theme"
+            android:backgroundTint="#60a5fa"
             app:cornerRadius="10dp"
             android:text="Sign In"
             android:textColor="#fff"

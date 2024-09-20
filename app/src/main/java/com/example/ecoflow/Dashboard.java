@@ -1,10 +1,13 @@
 package com.example.ecoflow;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ScrollView;
 
 import androidx.annotation.NonNull;
@@ -17,10 +20,12 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Dashboard extends AppCompatActivity  {
 
+    private ImageView tracking;
+
     private BottomNavigationView bottomNavigationView;
     private FrameLayout frameLayout;
 
-    private ScrollView scrollView;
+    private LinearLayout linearView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +36,9 @@ public class Dashboard extends AppCompatActivity  {
         bottomNavigationView = findViewById(R.id.bottomNavView);
         frameLayout = findViewById(R.id.frameLayout);
 
-        scrollView = findViewById(R.id.scroll);
+        linearView = findViewById(R.id.scroll);
+
+        tracking = findViewById(R.id.track);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -41,16 +48,16 @@ public class Dashboard extends AppCompatActivity  {
 
                 if (itemId == R.id.navHome) {
                     loadFragment(new HomeFragment(), false);
-                    scrollView.setVisibility(View.VISIBLE);
+                    linearView.setVisibility(View.VISIBLE);
                 } else if (itemId == R.id.navAbout) {
                     loadFragment(new AboutFragment(), false);
-                    scrollView.setVisibility(View.GONE);
+                    linearView.setVisibility(View.GONE);
                 } else if (itemId == R.id.navFeedback) {
                     loadFragment(new FeedbackFragment(), false);
-                    scrollView.setVisibility(View.GONE);
+                    linearView.setVisibility(View.GONE);
                 } else if (itemId == R.id.navProfile) {
                     loadFragment(new ProfileFragment(), false);
-                    scrollView.setVisibility(View.GONE);
+                    linearView.setVisibility(View.GONE);
                 }
 
                 return true;
@@ -58,6 +65,14 @@ public class Dashboard extends AppCompatActivity  {
         });
 
         loadFragment(new HomeFragment(), true);
+
+        tracking.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Dashboard.this, WaterTracking.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void loadFragment(Fragment fragment, boolean isAppInitialized) {
