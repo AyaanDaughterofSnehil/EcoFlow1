@@ -15,8 +15,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.ecoflow.HomeAdapter.RecyclerAdapter;
+import com.example.ecoflow.HomeAdapter.RecyclerHelperClass;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.util.ArrayList;
 
 public class Dashboard extends AppCompatActivity  {
 
@@ -27,18 +33,26 @@ public class Dashboard extends AppCompatActivity  {
 
     private LinearLayout linearView;
 
+    RecyclerView recyclerView;
+    RecyclerView.Adapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_dashboard);
 
+        //Hooks
         bottomNavigationView = findViewById(R.id.bottomNavView);
         frameLayout = findViewById(R.id.frameLayout);
 
         linearView = findViewById(R.id.scroll);
 
         tracking = findViewById(R.id.track);
+
+        recyclerView = findViewById(R.id.recycle_water);
+
+        recyclerView();
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -73,6 +87,22 @@ public class Dashboard extends AppCompatActivity  {
                 startActivity(intent);
             }
         });
+    }
+
+    private void recyclerView() {
+
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL, false));
+
+        ArrayList<RecyclerHelperClass> recyclerWater = new ArrayList<>();
+
+        recyclerWater.add(new RecyclerHelperClass(R.drawable.recycle2, "Rainwater Harvesting", "Harness nature's gift - Store rainwater for future use."));
+        recyclerWater.add(new RecyclerHelperClass(R.drawable.recycle3, "Drip Irrigation", "Grow together - Use drip irrigation to save water."));
+        recyclerWater.add(new RecyclerHelperClass(R.drawable.recycle4, "Recycle and Reuse", "The future is in our hands - Recycle and Reuse today."));
+        recyclerWater.add(new RecyclerHelperClass(R.drawable.recycle5, "Conserve Water", "Protect our water sources - Keep life flowing."));
+
+        adapter = new RecyclerAdapter(recyclerWater);
+        recyclerView.setAdapter(adapter);
     }
 
     private void loadFragment(Fragment fragment, boolean isAppInitialized) {
