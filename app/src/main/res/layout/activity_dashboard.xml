@@ -45,6 +45,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Search"
+                        android:textColor="#99000000"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="15dp"/>
 
@@ -93,7 +94,7 @@
                         android:layout_height="wrap_content"
                         android:breakStrategy="simple"
                         android:maxLines="2"
-                        android:textColor="@color/theme"
+                        android:textColor="#66000000"
                         android:textAlignment="center"
                         android:text="Water Tracking"/>
 
@@ -124,7 +125,7 @@
                         android:layout_height="wrap_content"
                         android:breakStrategy="simple"
                         android:lines="2"
-                        android:textColor="@color/theme"
+                        android:textColor="#66000000"
                         android:textAlignment="center"
                         android:text="Water Recharge"/>
 
@@ -155,7 +156,7 @@
                         android:layout_height="wrap_content"
                         android:breakStrategy="simple"
                         android:maxLines="2"
-                        android:textColor="@color/theme"
+                        android:textColor="#66000000"
                         android:textAlignment="center"
                         android:text="Water Management"/>
 
@@ -186,7 +187,7 @@
                         android:layout_height="wrap_content"
                         android:breakStrategy="simple"
                         android:lines="2"
-                        android:textColor="@color/theme"
+                        android:textColor="#66000000"
                         android:textAlignment="center"
                         android:text="Help      Center"/>
 
@@ -211,12 +212,12 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="efficient water   use"
+                    android:text="Conserve. Sustain. Thrive."
                     android:textSize="25sp"
                     android:minLines="3"
                     android:fontFamily="@font/suse_head"
                     android:breakStrategy="simple"
-                    android:maxWidth="145dp"
+                    android:maxWidth="150dp"
                     android:layout_marginLeft="10dp"
                     android:textColor="@color/head_theme"
                     android:layout_marginTop="50dp"
@@ -226,10 +227,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:fontFamily="@font/suse"
                     android:textColor="#99000000"
-                    android:textSize="18sp"
-                    android:text="Efficient water management for sustainability and reduced waste."/>
+                    android:textSize="16sp"
+                    android:text="Discover how simple actions today create a sustainable tomorrow - Explore water conservation."/>
 
             </LinearLayout>
 
@@ -256,6 +256,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#F2172554"
+        app:itemTextColor="#CCFFFFFF"
         app:itemIconTint="@color/nav_icons"
         app:itemActiveIndicatorStyle="@style/NavIndicator"
         app:menu="@menu/bottom_nav_menu" />
