@@ -1,15 +1,229 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/main"
+    android:orientation="vertical"
     tools:context=".ProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Profile"
-        android:textSize="60sp" />
+        android:layout_height="300dp"
+        android:padding="20dp"
+        android:background="#CC60a5fa">
+
+        <ImageView
+            android:id="@+id/userImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/userimage"
+            android:layout_centerVertical="true" />
+
+
+        <TextView
+            android:id="@+id/full_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ayaan Roy"
+            android:textColor="#ffffff"
+            android:textSize="40sp"
+            android:fontFamily="@font/suse_head"
+            android:layout_toRightOf="@+id/userImage"
+            android:layout_centerVertical="true"
+            android:includeFontPadding="false"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ayaan_roy"
+            android:textColor="#ffffff"
+            android:textSize="26sp"
+            android:layout_toRightOf="@+id/userImage"
+            android:includeFontPadding="false"
+            android:layout_below="@+id/full_name"
+            android:layout_marginLeft="10dp" />
+
+
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginTop="-80dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_height="125dp"
+            android:layout_weight="1"
+            app:cardBackgroundColor="#60a5fa"
+            app:cardElevation="15dp"
+            android:layout_margin="10dp">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="5dp">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/money"
+                    android:layout_centerHorizontal="true"/>
+
+                <TextView
+                    android:id="@+id/recharge_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$187"
+                    android:textColor="#ffffff"
+                    android:includeFontPadding="false"
+                    android:textSize="25sp"
+                    android:fontFamily="@font/suse_head"
+                    android:layout_centerInParent="true"/>
+
+                <TextView
+                    android:id="@+id/recharge_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Amount"
+                    android:textColor="#ffffff"
+                    android:includeFontPadding="false"
+                    android:textSize="25sp"
+                    android:layout_below="@+id/recharge_amount"
+                    android:layout_centerHorizontal="true"/>
+
+
+            </RelativeLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_height="125dp"
+            android:layout_weight="1"
+            app:cardBackgroundColor="#60a5fa"
+            app:cardElevation="15dp"
+            android:layout_margin="10dp">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="5dp">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/waterdrop"
+                    android:layout_centerHorizontal="true"/>
+
+                <TextView
+                    android:id="@+id/remaining_water"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="98L"
+                    android:textColor="#ffffff"
+                    android:includeFontPadding="false"
+                    android:textSize="25sp"
+                    android:fontFamily="@font/suse_head"
+                    android:layout_centerInParent="true"/>
+
+                <TextView
+                    android:id="@+id/water_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Water Level"
+                    android:textColor="#ffffff"
+                    android:includeFontPadding="false"
+                    android:textSize="25sp"
+                    android:layout_below="@+id/remaining_water"
+                    android:layout_centerHorizontal="true"/>
+
+
+            </RelativeLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Full Name"
+            android:layout_marginTop="10dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/profile"
+                app:hintTextColor="@color/theme"
+                android:drawablePadding="10dp"
+                android:text="Snehil Mahajan"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="E-Mail">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/profile"
+                app:hintTextColor="@color/theme"
+                android:drawablePadding="10dp"
+                android:text="ayaan@gmail.com"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Phone No">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/profile"
+                app:hintTextColor="@color/theme"
+                android:drawablePadding="10dp"
+                android:text="+91 273 376 8738"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/profile"
+                app:hintTextColor="@color/theme"
+                android:drawablePadding="10dp"
+                android:text="sdsgag235"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
 
 </LinearLayout>
