@@ -18,7 +18,7 @@
             android:id="@+id/userImage"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:src="@drawable/userimage"
+            android:src="@drawable/logo"
             android:layout_centerVertical="true" />
 
 
@@ -74,7 +74,7 @@
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/money"
+                    android:src="@drawable/logo"
                     android:layout_centerHorizontal="true"/>
 
                 <TextView
@@ -122,7 +122,7 @@
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/waterdrop"
+                    android:src="@drawable/logo"
                     android:layout_centerHorizontal="true"/>
 
                 <TextView
@@ -167,13 +167,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Full Name"
+            android:textColorHint="#60a5fa"
+            android:theme="@style/ThemeOverlay.AppTheme.TextInputEditText.Outlined"
+            style="@style/TextInputStyle"
+            app:hintTextColor="@color/head_theme"
             android:layout_marginTop="10dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/profile"
-                app:hintTextColor="@color/theme"
                 android:drawablePadding="10dp"
                 android:text="Snehil Mahajan"/>
 
@@ -182,13 +185,16 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColorHint="#60a5fa"
+            android:theme="@style/ThemeOverlay.AppTheme.TextInputEditText.Outlined"
+            style="@style/TextInputStyle"
+            app:hintTextColor="@color/head_theme"
             android:hint="E-Mail">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/profile"
-                app:hintTextColor="@color/theme"
                 android:drawablePadding="10dp"
                 android:text="ayaan@gmail.com"/>
 
@@ -197,13 +203,16 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColorHint="#60a5fa"
+            android:theme="@style/ThemeOverlay.AppTheme.TextInputEditText.Outlined"
+            style="@style/TextInputStyle"
+            app:hintTextColor="@color/head_theme"
             android:hint="Phone No">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/profile"
-                app:hintTextColor="@color/theme"
                 android:drawablePadding="10dp"
                 android:text="+91 273 376 8738"/>
 
@@ -212,13 +221,16 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColorHint="#60a5fa"
+            android:theme="@style/ThemeOverlay.AppTheme.TextInputEditText.Outlined"
+            style="@style/TextInputStyle"
+            app:hintTextColor="@color/head_theme"
             android:hint="Password">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/profile"
-                app:hintTextColor="@color/theme"
                 android:drawablePadding="10dp"
                 android:text="sdsgag235"/>
 
