@@ -1,15 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AboutFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="About"
-        android:textSize="68sp" />
+        android:layout_height="wrap_content">
 
-</LinearLayout>
+        <!-- Background Image -->
+        <ImageView
+            android:id="@+id/bg_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/aboutas"/>  <!-- Replace with your image -->
+
+        <!-- Heading Text -->
+        <TextView
+            android:id="@+id/about_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:text="About Us"
+            android:textColor="@android:color/white"
+            android:textSize="64sp"
+            android:background="@drawable/border"
+            android:fontFamily="@font/suse_head"
+            android:textStyle="bold"
+            android:shadowColor="#000000"
+            android:shadowRadius="5" />
+
+        <!-- Explanatory Text -->
+        <TextView
+            android:id="@+id/about_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/about_heading"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:text="Our app provides a simple yet powerful solution to help you manage your water usage efficiently. At EcoFlow, we are dedicated to reducing water wastage in urban households through innovative technology. By connecting to an Arduino board, EcoFlow tracks your water consumption in real time, ensuring you stay within a set limit and avoid overuse."
+            android:textColor="@android:color/white"
+            android:fontFamily="@font/suse_sub"
+            android:textSize="36sp"
+            android:gravity="center"
+            android:shadowRadius="6"
+            android:shadowDx="1"
+            android:shadowDy="1" />
+
+    </RelativeLayout>
+
+</ScrollView>
