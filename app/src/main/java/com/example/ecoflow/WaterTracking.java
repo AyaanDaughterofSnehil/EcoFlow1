@@ -35,6 +35,5 @@ public class WaterTracking extends AppCompatActivity {
     public void back(View view) {
         Intent intent = new Intent(WaterTracking.this, Dashboard.class);
         startActivity(intent);
-
     }
 }

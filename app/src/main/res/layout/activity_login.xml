@@ -50,8 +50,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/username"
             android:layout_marginBottom="10dp"
-            android:theme="@style/ThemeOverlay.AppTheme.TextInputEditText.Outlined"
             android:hint="Username"
+            android:theme="@style/ThemeOverlay.AppTheme.TextInputEditText.Outlined"
             app:hintTextColor="@color/head_theme"
             android:textColorHint="#99000000"
             style="@style/TextInputStyle">

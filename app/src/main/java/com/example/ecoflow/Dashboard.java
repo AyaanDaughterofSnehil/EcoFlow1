@@ -1,6 +1,7 @@
 package com.example.ecoflow;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -116,5 +117,16 @@ public class Dashboard extends AppCompatActivity  {
         }
 
         fragmentTransaction.commit();
+    }
+
+    public void manage(View view) {
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse("https://youtu.be/C65iqOSCZOY?si=WAWChVBPLOax7-eo")); // Replace with your link
+        startActivity(intent);
+    }
+
+    public void help(View view) {
+        Intent intent = new Intent(Dashboard.this, HelpCenter.class); // Replace with your link
+        startActivity(intent);
     }
 }

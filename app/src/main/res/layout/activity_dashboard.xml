@@ -108,7 +108,7 @@
                     <RelativeLayout
                         android:layout_width="60dp"
                         android:layout_height="60dp"
-                        android:background="@drawable/card_1"
+                        android:background="@drawable/card_disabled"
                         android:elevation="4dp"
                         android:layout_margin="10dp">
 
@@ -116,7 +116,9 @@
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:src="@drawable/w_recharge"
-                            android:layout_centerInParent="true"/>
+                            android:tint="#6b7280"
+                            android:layout_centerInParent="true"
+                            tools:ignore="UseAppTint" />
 
                     </RelativeLayout>
 
@@ -146,6 +148,7 @@
                         <ImageView
                             android:layout_width="30dp"
                             android:layout_height="30dp"
+                            android:onClick="manage"
                             android:src="@drawable/w_manage"
                             android:layout_centerInParent="true"/>
 
@@ -178,6 +181,7 @@
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:src="@drawable/w_help"
+                            android:onClick="help"
                             android:layout_centerInParent="true"/>
 
                     </RelativeLayout>
