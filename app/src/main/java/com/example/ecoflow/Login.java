@@ -117,8 +117,8 @@ public class Login extends AppCompatActivity {
             return;
         } else {
             isUser();
-            Intent myIntent = new Intent(Login.this, Dashboard.class);
-            Login.this.startActivity(myIntent);
+            //Intent myIntent = new Intent(Login.this, Dashboard.class);
+            //Login.this.startActivity(myIntent);
         }
     }
 
@@ -151,7 +151,7 @@ public class Login extends AppCompatActivity {
                         String phoneNoFromDB = snapshot.child(userEnteredUsername).child("phoneNo").getValue(String.class);
                         String emailFromDB = snapshot.child(userEnteredUsername).child("email").getValue(String.class);
 
-                        Intent intent = new Intent(getApplicationContext(), ProfileFragment.class);
+                        Intent intent = new Intent(getApplicationContext(), Dashboard.class);
 
                         intent.putExtra("name",nameFromDB);
                         intent.putExtra("username",usernameFromDB);
@@ -175,7 +175,7 @@ public class Login extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
+                return;
             }
         });
     }
