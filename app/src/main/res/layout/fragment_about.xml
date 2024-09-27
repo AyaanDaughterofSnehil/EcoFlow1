@@ -45,7 +45,7 @@
             android:text="Our app provides a simple yet powerful solution to help you manage your water usage efficiently. At EcoFlow, we are dedicated to reducing water wastage in urban households through innovative technology. By connecting to an Arduino board, EcoFlow tracks your water consumption in real time, ensuring you stay within a set limit and avoid overuse."
             android:textColor="@android:color/white"
             android:fontFamily="@font/suse_sub"
-            android:textSize="36sp"
+            android:textSize="30sp"
             android:gravity="center"
             android:shadowRadius="6"
             android:shadowDx="1"

@@ -80,7 +80,7 @@
                         android:id="@+id/recharge_amount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="$187"
+                        android:text="₹ 0"
                         android:textColor="#ffffff"
                         android:includeFontPadding="false"
                         android:textSize="25sp"
@@ -124,7 +124,7 @@
                         android:id="@+id/remaining_water"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="98L"
+                        android:text="0 L"
                         android:textColor="#ffffff"
                         android:includeFontPadding="false"
                         android:textSize="25sp"
@@ -135,7 +135,7 @@
                         android:id="@+id/water_label"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Water Level"
+                        android:text="Water Used"
                         android:textColor="#ffffff"
                         android:includeFontPadding="false"
                         android:textSize="25sp"
@@ -220,14 +220,6 @@
                     android:text="sdsgag235"/>
 
             </com.google.android.material.textfield.TextInputLayout>
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Submit"
-                android:fontFamily="@font/suse_head"
-                android:background="@color/theme"
-                android:layout_marginTop="20dp"/>
 
         </LinearLayout>
 

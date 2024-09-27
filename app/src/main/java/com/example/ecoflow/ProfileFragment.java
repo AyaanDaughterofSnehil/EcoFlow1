@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +17,7 @@ import com.google.android.material.textfield.TextInputLayout;
 public class ProfileFragment extends Fragment {
 
     TextInputLayout fullName, email, phoneNo, password;
-    TextView fullNameLabel, usernameLabel;
+    TextView fullNameLabel, usernameLabel, waterLevel;
 
     @Nullable
     @Override
@@ -33,7 +34,19 @@ public class ProfileFragment extends Fragment {
         fullNameLabel = view.findViewById(R.id.fullname_field);
         usernameLabel = view.findViewById(R.id.username_field);
 
+        waterLevel = view.findViewById(R.id.remaining_water);
+
         showAllUserData();
+
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if (true) {
+                    waterLevel.setText("0.4L");
+                }
+            }
+        }, 4000);
 
         return view;
     }
